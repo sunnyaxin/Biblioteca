@@ -1,9 +1,11 @@
 package com.twu.biblioteca;
 
 public class Book {
+    private int id;
     private String name, author, year;
 
-    Book(String name, String author, String year) {
+    Book(int id, String name, String author, String year) {
+        this.id = id;
         this.name = name;
         this.author = author;
         this.year = year;
@@ -13,12 +15,8 @@ public class Book {
         return name;
     }
 
-    public String getAuthor() {
-        return author;
-    }
-
-    public String getYear() {
-        return year;
+    public int getId() {
+        return id;
     }
 
     @Override
@@ -28,12 +26,13 @@ public class Book {
 
         Book book = (Book) o;
 
-        return name.equals(book.name) && author.equals(book.author) && year.equals(book.year);
+        return id == book.id && name.equals(book.name) && author.equals(book.author) && year.equals(book.year);
     }
 
     @Override
     public int hashCode() {
-        int result = name.hashCode();
+        int result = id;
+        result = 31 * result + name.hashCode();
         result = 31 * result + author.hashCode();
         result = 31 * result + year.hashCode();
         return result;

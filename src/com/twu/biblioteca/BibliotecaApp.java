@@ -8,13 +8,13 @@ public class BibliotecaApp {
     private static List<Book> books = bookManager.initBookList();
 
     public static void main(String[] args) {
-        System.out.println(welcome());
+        print(welcome());
         printBookListName();
     }
 
     private static void printBookListName() {
-        for (int i = 0; i < books.size(); i++) {
-            System.out.println(i + ". " + books.get(i).getName());
+        for (Book book : books) {
+            System.out.println(book.getId() + ". " + book.getName());
         }
     }
 
@@ -22,4 +22,7 @@ public class BibliotecaApp {
         return "****** Welcome Biblioteca ******";
     }
 
+    private static void print(String string){
+        System.out.println(string);
+    }
 }
