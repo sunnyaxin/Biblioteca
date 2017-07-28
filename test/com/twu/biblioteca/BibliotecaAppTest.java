@@ -23,4 +23,9 @@ public class BibliotecaAppTest {
     public void test_welcome_message() throws Exception {
         assertEquals("****** Welcome Biblioteca ******", BibliotecaApp.welcome());
     }
+
+    @Test
+    public void test_print_options_list_books() throws Exception {
+        assertEquals("List Books", BibliotecaApp.printListBooksOptions());
+    }
 }

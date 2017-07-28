@@ -11,8 +11,15 @@ public class BibliotecaApp {
 
     public static void main(String[] args) {
         print(welcome());
-        printBookListName();
-        printSelectedBookDetails(bookManager.findBookById(getSelectedBookId()));
+        print(printListBooksOptions());
+        printDifferentOption(getSelectedOption());
+    }
+
+    private static void printDifferentOption(String selectedOption) {
+        if(selectedOption.equals("List Books")){
+            printBookListName();
+            printSelectedBookDetails(bookManager.findBookById(getSelectedBookId()));
+        }
     }
 
     private static void printSelectedBookDetails(Book selectedBook) {
@@ -22,12 +29,18 @@ public class BibliotecaApp {
         print("Book Year Published: "+ selectedBook.getYear());
     }
 
+    private static String getSelectedOption() {
+        print("Please select option:");
+        return scanner.nextLine();
+    }
+
     private static int getSelectedBookId() {
-        print("select number of the book:");
+        print("Please select number of the book:");
         return scanner.nextInt();
     }
 
     private static void printBookListName() {
+        print("****** Book List ******");
         for (Book book : books) {
             System.out.println(book.getId() + ". " + book.getName());
         }
@@ -35,6 +48,10 @@ public class BibliotecaApp {
 
     static String welcome() {
         return "****** Welcome Biblioteca ******";
+    }
+
+    static String printListBooksOptions() {
+        return "List Books";
     }
 
     private static void print(String string){
