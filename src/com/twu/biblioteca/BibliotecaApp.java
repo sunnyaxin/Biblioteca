@@ -15,7 +15,7 @@ public class BibliotecaApp {
             print(printListBooksOptions());
             print(printQuitOptions());
             String selectedOption = getSelectedOption();
-            if(selectedOption.equals("Quit"))
+            if (selectedOption.equals("Quit"))
                 break;
             printDifferentOption(selectedOption);
         }
@@ -25,15 +25,20 @@ public class BibliotecaApp {
         if (selectedOption.equals("List Books")) {
             printBookListName();
             printSelectedBookDetails(bookManager.findBookById(getSelectedBookId()));
+        } else {
+            print("Select a valid option!");
         }
-        print("Select a valid option!");
     }
 
     private static void printSelectedBookDetails(Book selectedBook) {
-        print("****** Book Details ******");
-        print("Book Name: " + selectedBook.getName());
-        print("Book Author: " + selectedBook.getAuthor());
-        print("Book Year Published: " + selectedBook.getYear());
+        if (selectedBook == null)
+            print("Select a valid book!");
+        else {
+            print("****** Book Details ******");
+            print("Book Name: " + selectedBook.getName());
+            print("Book Author: " + selectedBook.getAuthor());
+            print("Book Year Published: " + selectedBook.getYear());
+        }
     }
 
     private static String getSelectedOption() {
