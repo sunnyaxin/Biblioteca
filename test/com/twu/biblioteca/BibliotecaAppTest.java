@@ -12,10 +12,12 @@ import static org.junit.Assert.assertEquals;
 public class BibliotecaAppTest {
 
     private List<Book> books;
+    private BookManager bookManager;
 
     @Before
     public void setUp() throws Exception {
-        books = BibliotecaApp.initBookList();
+        bookManager = new BookManager();
+        books = bookManager.initBookList();
     }
 
     @Test
@@ -33,7 +35,7 @@ public class BibliotecaAppTest {
 
     @Test
     public void test_list_books_name() throws Exception {
-        assertEquals(Arrays.asList("追风筝的人","小王子", "围城","解忧杂货店","活着","白夜行","挪威的森林","三体"),
-                BibliotecaApp.getBookNameList(books));
+        assertEquals(Arrays.asList("追风筝的人", "小王子", "围城", "解忧杂货店", "活着", "白夜行", "挪威的森林", "三体"),
+                bookManager.getBookNameList(books));
     }
 }
