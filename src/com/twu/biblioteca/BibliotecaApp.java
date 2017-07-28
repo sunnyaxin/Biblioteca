@@ -10,25 +10,30 @@ public class BibliotecaApp {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        print(welcome());
-        print(printListBooksOptions());
-        printDifferentOption(getSelectedOption());
+        while (true) {
+            print(welcome());
+            print(printListBooksOptions());
+            print(printQuitOptions());
+            String selectedOption = getSelectedOption();
+            if(selectedOption.equals("Quit"))
+                break;
+            printDifferentOption(selectedOption);
+        }
     }
 
     private static void printDifferentOption(String selectedOption) {
-        if(selectedOption.equals("List Books")){
+        if (selectedOption.equals("List Books")) {
             printBookListName();
             printSelectedBookDetails(bookManager.findBookById(getSelectedBookId()));
-        }else{
-            print("Select a valid option!");
         }
+        print("Select a valid option!");
     }
 
     private static void printSelectedBookDetails(Book selectedBook) {
         print("****** Book Details ******");
-        print("Book Name: "+ selectedBook.getName());
-        print("Book Author: "+ selectedBook.getAuthor());
-        print("Book Year Published: "+ selectedBook.getYear());
+        print("Book Name: " + selectedBook.getName());
+        print("Book Author: " + selectedBook.getAuthor());
+        print("Book Year Published: " + selectedBook.getYear());
     }
 
     private static String getSelectedOption() {
@@ -56,7 +61,11 @@ public class BibliotecaApp {
         return "List Books";
     }
 
-    private static void print(String string){
+    private static void print(String string) {
         System.out.println(string);
+    }
+
+    static String printQuitOptions() {
+        return "Quit";
     }
 }
