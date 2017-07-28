@@ -9,9 +9,10 @@ public class BibliotecaApp {
         System.out.println(welcome());
 
         List<Book> books = initBookList();
+        
     }
 
-    private static List<Book> initBookList() {
+    static List<Book> initBookList() {
         List<Book> books = new ArrayList<Book>();
         books.add(new Book("追风筝的人", "卡勒德·胡赛尼", "2006"));
         books.add(new Book("小王子", "圣埃克苏佩里", "2003"));
