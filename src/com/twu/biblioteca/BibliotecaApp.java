@@ -19,6 +19,8 @@ public class BibliotecaApp {
         if(selectedOption.equals("List Books")){
             printBookListName();
             printSelectedBookDetails(bookManager.findBookById(getSelectedBookId()));
+        }else{
+            print("Select a valid option!");
         }
     }
 
