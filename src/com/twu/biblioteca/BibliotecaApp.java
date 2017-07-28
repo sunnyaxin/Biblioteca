@@ -5,15 +5,34 @@ import java.util.List;
 
 public class BibliotecaApp {
 
-    public static void main(String[] args) {
-        System.out.println(welcome());
+    private static List<Book> books;
 
-        List<Book> books = initBookList();
-        
+    static {
+        books = initBookList();
     }
 
+    public static void main(String[] args) {
+        System.out.println(welcome());
+        printBookListName();
+    }
+
+    private static void printBookListName() {
+        for (int i = 0; i < books.size(); i++) {
+            System.out.println(i+". "+ books.get(i).getName());
+        }
+    }
+
+    static List<String> getBookNameList(List<Book> books) {
+        List<String> bookNameList = new ArrayList<>();
+        for (Book book : books) {
+            bookNameList.add(book.getName());
+        }
+        return bookNameList;
+    }
+
+
     static List<Book> initBookList() {
-        List<Book> books = new ArrayList<Book>();
+        List<Book> books = new ArrayList<>();
         books.add(new Book("追风筝的人", "卡勒德·胡赛尼", "2006"));
         books.add(new Book("小王子", "圣埃克苏佩里", "2003"));
         books.add(new Book("围城", "钱钟书", "1991"));
