@@ -5,6 +5,15 @@ import java.util.List;
 
 class BookManager {
 
+    Book findBookById(int bookId) {
+        for (Book b : BibliotecaApp.books) {
+            if (b.getId() == bookId) {
+                return b;
+            }
+        }
+        return null;
+    }
+
     List<String> getBookNameList(List<Book> books) {
         List<String> bookNameList = new ArrayList<>();
         for (Book book : books) {

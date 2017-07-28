@@ -15,7 +15,15 @@ public class Book {
         return name;
     }
 
-    public int getId() {
+    String getYear() {
+        return year;
+    }
+
+    String getAuthor() {
+        return author;
+    }
+
+    int getId() {
         return id;
     }
 
