@@ -48,7 +48,7 @@ public class BibliotecaApp {
 
     private static int getSelectedBookId() {
         print("Please select number of the book:");
-        return scanner.nextInt();
+        return Integer.valueOf(scanner.nextLine());
     }
 
     private static void printBookListName() {
@@ -59,6 +59,7 @@ public class BibliotecaApp {
     }
 
     static String welcome() {
+        print("");
         return "****** Welcome Biblioteca ******";
     }
 
