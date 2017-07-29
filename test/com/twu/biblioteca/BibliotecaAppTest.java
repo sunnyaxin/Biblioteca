@@ -36,6 +36,6 @@ public class BibliotecaAppTest {
 
     @Test
     public void test_print_checkout_book() throws Exception {
-        assertEquals("Would you like to checkout the book?", BibliotecaApp.printCheckoutBook());
+        assertEquals("Would you like to checkout the book?Y/N", BibliotecaApp.printCheckoutBook());
     }
 }

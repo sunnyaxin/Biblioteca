@@ -24,11 +24,28 @@ public class BibliotecaApp {
     private static void printDifferentOption(String selectedOption) {
         if (selectedOption.equals("List Books")) {
             printBookListName();
-            printSelectedBookDetails(bookManager.findBookById(getSelectedBookId()));
+            Book selectedBook = bookManager.findBookById(getSelectedBookId());
+            printSelectedBookDetails(selectedBook);
             print(printCheckoutBook());
+            printCheckoutBookResult(selectedBook, getCheckoutOption());
         } else {
             print("Select a valid option!");
         }
+    }
+
+    private static void printCheckoutBookResult(Book selectedBook, String checkoutOption) {
+        if (checkoutOption.equals("Y") && !selectedBook.isCheckout()) {
+            selectedBook.setCheckout(true);
+            print("Thank you! Enjoy the book.");
+        } else if (checkoutOption.equals("N")) {
+            print("Thank you!");
+        } else {
+            print("That book is not available.");
+        }
+    }
+
+    private static String getCheckoutOption() {
+        return scanner.nextLine();
     }
 
     private static void printSelectedBookDetails(Book selectedBook) {
@@ -78,6 +95,6 @@ public class BibliotecaApp {
     }
 
     static String printCheckoutBook() {
-        return "Would you like to checkout the book?";
+        return "Would you like to checkout the book?Y/N";
     }
 }
