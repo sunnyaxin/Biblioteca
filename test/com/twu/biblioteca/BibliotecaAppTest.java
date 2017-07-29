@@ -33,4 +33,9 @@ public class BibliotecaAppTest {
     public void test_print_options_quit() throws Exception {
         assertEquals("quit", BibliotecaApp.printQuitOptions());
     }
+
+    @Test
+    public void test_print_checkout_book() throws Exception {
+        assertEquals("Would you like to checkout the book?", BibliotecaApp.printCheckoutBook());
+    }
 }

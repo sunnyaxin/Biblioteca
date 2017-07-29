@@ -25,6 +25,7 @@ public class BibliotecaApp {
         if (selectedOption.equals("List Books")) {
             printBookListName();
             printSelectedBookDetails(bookManager.findBookById(getSelectedBookId()));
+            printCheckoutBook();
         } else {
             print("Select a valid option!");
         }
@@ -73,5 +74,9 @@ public class BibliotecaApp {
 
     static String printQuitOptions() {
         return "Quit";
+    }
+
+    static String printCheckoutBook() {
+        return "Would you like to checkout the book?";
     }
 }
