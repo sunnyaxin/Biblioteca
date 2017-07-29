@@ -38,4 +38,9 @@ public class BibliotecaAppTest {
     public void test_print_checkout_book() throws Exception {
         assertEquals("Would you like to checkout the book?Y/N", BibliotecaApp.printCheckoutBook());
     }
+
+    @Test
+    public void test_print_return_book() throws Exception {
+        assertEquals("* Return book *", BibliotecaApp.printReturnBook());
+    }
 }
