@@ -31,7 +31,7 @@ public class BibliotecaAppTest {
 
     @Test
     public void test_print_options_quit() throws Exception {
-        assertEquals("quit", BibliotecaApp.printQuitOptions());
+        assertEquals("Quit", BibliotecaApp.printQuitOptions());
     }
 
     @Test

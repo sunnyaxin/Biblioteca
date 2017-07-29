@@ -25,7 +25,7 @@ public class BibliotecaApp {
         if (selectedOption.equals("List Books")) {
             printBookListName();
             printSelectedBookDetails(bookManager.findBookById(getSelectedBookId()));
-            printCheckoutBook();
+            print(printCheckoutBook());
         } else {
             print("Select a valid option!");
         }
@@ -39,6 +39,7 @@ public class BibliotecaApp {
             print("Book Name: " + selectedBook.getName());
             print("Book Author: " + selectedBook.getAuthor());
             print("Book Year Published: " + selectedBook.getYear());
+            print("Book Checkout state: " + selectedBook.isCheckout());
         }
     }
 

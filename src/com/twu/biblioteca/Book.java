@@ -3,12 +3,21 @@ package com.twu.biblioteca;
 public class Book {
     private int id;
     private String name, author, year;
+    private boolean checkout;
 
     Book(int id, String name, String author, String year) {
         this.id = id;
         this.name = name;
         this.author = author;
         this.year = year;
+    }
+
+    public boolean isCheckout() {
+        return checkout;
+    }
+
+    public void setCheckout(boolean checkout) {
+        this.checkout = checkout;
     }
 
     String getName() {
