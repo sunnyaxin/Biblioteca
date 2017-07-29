@@ -34,8 +34,8 @@ public class BookManagerTest {
 
     @Test
     public void test_get_book_details_when_id_1() throws Exception {
-        assertEquals("追风筝的人", bookManager.findBookById(1).getName());
-        assertEquals("卡勒德·胡赛尼", bookManager.findBookById(1).getAuthor());
-        assertEquals("2006", bookManager.findBookById(1).getYear());
+        assertEquals("追风筝的人", bookManager.findBookById(books, 1).getName());
+        assertEquals("卡勒德·胡赛尼", bookManager.findBookById(books, 1).getAuthor());
+        assertEquals("2006", bookManager.findBookById(books, 1).getYear());
     }
 }

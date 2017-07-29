@@ -5,8 +5,8 @@ import java.util.List;
 
 class BookManager {
 
-    Book findBookById(int bookId) {
-        for (Book b : BibliotecaApp.books) {
+    Book findBookById(List<Book> books, int bookId) {
+        for (Book b : books) {
             if (b.getId() == bookId) {
                 return b;
             }
