@@ -6,14 +6,16 @@ public class BibliotecaApp {
 
     private static Library library = new Library();
     private static Theater theater = new Theater();
+    private static User user;
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        User user = new User("123-1234", "Sunny", "123456789@pp.com", "1234567890", "123321");
+        user = new User("123-1234", "Sunny", "123456789@pp.com", "1234567890", "123321");
         while (true) {
             Tools.print(welcome());
             Tools.print(printListBooksOptions());
             Tools.print(printListMoviesOptions());
+            Tools.print(printUserInformationOptions());
             Tools.print(printQuitOptions());
             String selectedOption = getSelectedOption();
             if (selectedOption.equals("Quit"))
@@ -23,12 +25,19 @@ public class BibliotecaApp {
     }
 
     private static void printDifferentOption(String selectedOption) {
-        if (selectedOption.equals("List Books")) {
-            library.printLibraryMenu();
-        } else if (selectedOption.equals("List Movies")) {
-            theater.printTheaterMenu();
-        } else {
-            Tools.print("Select a valid option!");
+        switch (selectedOption) {
+            case "List Books":
+                library.printLibraryMenu();
+                break;
+            case "List Movies":
+                theater.printTheaterMenu();
+                break;
+            case "User Information":
+                user.printUserInformation();
+                break;
+            default:
+                Tools.print("Select a valid option!");
+                break;
         }
     }
 
@@ -52,5 +61,9 @@ public class BibliotecaApp {
 
     static String printListMoviesOptions() {
         return "List Movies";
+    }
+
+    static String printUserInformationOptions() {
+        return "User Information";
     }
 }

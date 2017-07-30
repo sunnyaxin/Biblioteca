@@ -25,5 +25,11 @@ public class BibliotecaAppTest {
     public void test_print_options_list_movies() throws Exception {
         assertEquals("List Movies", BibliotecaApp.printListMoviesOptions());
     }
+
+    @Test
+    public void test_print_options_user_information() throws Exception {
+        assertEquals("User Information", BibliotecaApp.printUserInformationOptions());
+    }
 }
+
 

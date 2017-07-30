@@ -11,24 +11,10 @@ public class User {
         this.password = password;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public String getPassword() {
-        return password;
+    void printUserInformation() {
+        Tools.print("User name: "+ name);
+        Tools.print("User email address: "+ email);
+        Tools.print("User phone number: "+ phoneNumber);
     }
 }
 
