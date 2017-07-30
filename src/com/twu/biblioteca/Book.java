@@ -12,11 +12,11 @@ public class Book {
         this.year = year;
     }
 
-    public boolean isCheckout() {
+    boolean isCheckout() {
         return checkout;
     }
 
-    public void setCheckout(boolean checkout) {
+    void setCheckout(boolean checkout) {
         this.checkout = checkout;
     }
 
