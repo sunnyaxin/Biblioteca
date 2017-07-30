@@ -9,6 +9,7 @@ public class BibliotecaApp {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+        User user = new User("123-1234", "Sunny", "123456789@pp.com", "1234567890", "123321");
         while (true) {
             Tools.print(welcome());
             Tools.print(printListBooksOptions());

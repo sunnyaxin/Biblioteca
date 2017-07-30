@@ -13,31 +13,15 @@ public class Movie {
         this.director = director;
     }
 
-    public void setCheckout(boolean checkout) {
-        this.checkout = checkout;
-    }
-
-    public int getId() {
+    int getId() {
         return id;
     }
 
-    public int getRating() {
-        return rating;
-    }
-
-    public String getName() {
+    String getName() {
         return name;
     }
 
-    public String getYear() {
-        return year;
-    }
-
-    public String getDirector() {
-        return director;
-    }
-
-    public boolean isCheckout() {
+    boolean isCheckout() {
         return checkout;
     }
 
@@ -48,11 +32,7 @@ public class Movie {
 
         Movie movie = (Movie) o;
 
-        if (id != movie.id) return false;
-        if (rating != movie.rating) return false;
-        if (!name.equals(movie.name)) return false;
-        if (!year.equals(movie.year)) return false;
-        return director.equals(movie.director);
+        return id == movie.id && rating == movie.rating && name.equals(movie.name) && year.equals(movie.year) && director.equals(movie.director);
     }
 
     @Override
