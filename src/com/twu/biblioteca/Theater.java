@@ -11,6 +11,11 @@ class Theater {
 
     void printTheaterMenu() {
         printMovieListName();
+        Tools.print(printCheckoutOption());
+        String movieListOption = getCheckoutMovie();
+        if (movieListOption.equals("Y")) {
+            Tools.print("CHECKOUT MOVIE...WAIT TO COMPLETE...");
+        }
     }
 
     private void printMovieListName() {
@@ -21,4 +26,12 @@ class Theater {
         }
     }
 
+    String printCheckoutOption() {
+        return "*** Checkout movie ***";
+    }
+
+    private String getCheckoutMovie() {
+        Tools.print("Would you like checkout any movie? Y/N");
+        return scanner.nextLine();
+    }
 }
