@@ -5,7 +5,7 @@ import com.twu.biblioteca.Movie;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MovieManager {
+class MovieManager {
     List<Movie> initMovieList(){
         List<Movie> movies = new ArrayList<>();
         movies.add(new Movie(1, 2, "肖申克的救赎", "1994", "Frank"));
@@ -17,3 +17,5 @@ public class MovieManager {
         return movies;
     }
 }
+
+

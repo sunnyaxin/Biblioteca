@@ -11,6 +11,7 @@ public class BibliotecaApp {
         while (true) {
             Tools.print(welcome());
             Tools.print(printListBooksOptions());
+            Tools.print(printListMoviesOptions());
             Tools.print(printQuitOptions());
             String selectedOption = getSelectedOption();
             if (selectedOption.equals("Quit"))
@@ -22,6 +23,8 @@ public class BibliotecaApp {
     private static void printDifferentOption(String selectedOption) {
         if (selectedOption.equals("List Books")) {
             library.printLibraryMenu();
+        } else if (selectedOption.equals("List Movies")) {
+            System.out.println(".....");
         } else {
             Tools.print("Select a valid option!");
         }
@@ -45,4 +48,7 @@ public class BibliotecaApp {
         return "Quit";
     }
 
+    static String printListMoviesOptions() {
+        return "List Movies";
+    }
 }

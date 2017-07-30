@@ -20,4 +20,10 @@ public class BibliotecaAppTest {
     public void test_print_options_quit() throws Exception {
         assertEquals("Quit", BibliotecaApp.printQuitOptions());
     }
+
+    @Test
+    public void test_print_options_list_movies() throws Exception {
+        assertEquals("List Movies", BibliotecaApp.printListMoviesOptions());
+    }
 }
+
