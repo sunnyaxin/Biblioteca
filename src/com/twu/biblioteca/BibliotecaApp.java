@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class BibliotecaApp {
 
     private static Library library = new Library();
+    private static Theater theater = new Theater();
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -24,7 +25,7 @@ public class BibliotecaApp {
         if (selectedOption.equals("List Books")) {
             library.printLibraryMenu();
         } else if (selectedOption.equals("List Movies")) {
-            System.out.println(".....");
+            theater.printTheaterMenu();
         } else {
             Tools.print("Select a valid option!");
         }

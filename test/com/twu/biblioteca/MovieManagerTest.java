@@ -25,4 +25,10 @@ public class MovieManagerTest {
         assertEquals(new Movie(2, 1, "这个杀手不太冷", "1994", "Luc"), movies.get(1));
         assertEquals(new Movie(6, 6, "盗梦空间", "2010", "Christopher"), movies.get(5));
     }
+
+    @Test
+    public void test_list_books_name() throws Exception {
+        assertEquals(Arrays.asList("肖申克的救赎", "这个杀手不太冷", "阿甘正传", "美丽人生", "千与千寻", "盗梦空间"),
+                movieManager.getMovieNameList(movies));
+    }
 }

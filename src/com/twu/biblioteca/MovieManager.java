@@ -16,6 +16,23 @@ class MovieManager {
         movies.add(new Movie(6, 6, "盗梦空间", "2010", "Christopher"));
         return movies;
     }
+
+    Movie findMovieById(List<Movie> movies, int movieId) {
+        for (Movie m : movies) {
+            if (m.getId() == movieId) {
+                return m;
+            }
+        }
+        return null;
+    }
+
+    List<String> getMovieNameList(List<Movie> movies) {
+        List<String> movieNameList = new ArrayList<>();
+        for (Movie movie : movies) {
+            movieNameList.add(movie.getName());
+        }
+        return movieNameList;
+    }
 }
 
 
